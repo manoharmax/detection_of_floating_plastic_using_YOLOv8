@@ -12,3 +12,9 @@ The system aims to support environmental monitoring by identifying plastic debri
 - NumPy
 - Machine Learning
 - Computer Vision
+
+## How It Works
+1. Input images or video frames containing water surfaces are provided to the system.
+2. The YOLOv8 model processes each frame to detect floating plastic objects.
+3. Detected plastic waste is highlighted using bounding boxes with confidence scores.
+4. The output enables monitoring and analysis of plastic pollution in water bodies.

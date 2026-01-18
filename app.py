@@ -10,7 +10,16 @@ import pandas as pd
 # Load YOLOv8 model
 @st.cache_resource
 def load_model():
-    return YOLO("runs/detect/train_yolov8x_balanced_50ep_resized3/weights/best.pt")
+    model_path = "last.pt"
+
+    if not os.path.exists(model_path):
+        st.info("⬇️ Downloading YOLOv8 model weights...")
+        os.system(
+            "wget https://huggingface.co/Manohar150103/floating-plastic-yolov8/resolve/main/last.pt"
+        )
+
+    return YOLO(model_path)
+
 
 model = load_model()
 

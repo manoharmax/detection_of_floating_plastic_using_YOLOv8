@@ -25,7 +25,7 @@ model = load_model()
 
 # Streamlit UI config
 st.set_page_config(page_title="Plastic Detection", layout="wide")
-st.title("🧼 Detection and Monitoring of Floating Plastic Debris")
+st.title(" Detection and Monitoring of Floating Plastic Debris")
 st.markdown("Upload image(s), adjust detection settings, and run the plastic detection model.")
 
 # Sidebar controls
@@ -33,7 +33,7 @@ with st.sidebar:
     st.header("⚙️ Settings")
     conf = st.slider("Confidence Threshold", 0.0, 1.0, 0.25, 0.05)
     iou = st.slider("IoU Threshold", 0.0, 1.0, 0.45, 0.05)
-    zoom_option = st.checkbox("🔍 Enable Zoom-based Tiling (512x512 patches)")
+    zoom_option = st.checkbox(" Enable Zoom-based Tiling (512x512 patches)")
     show_metrics = st.checkbox("📊 Show Detection Metrics Table")
     run = st.button("🔎 Run Detection")
 
@@ -70,7 +70,7 @@ if run and uploaded_files:
 
             # Plot image with modified labels
             img_out = result.plot(labels=True)
-            st.image(img_out, caption="🧠 Detection Output", use_column_width=True)
+            st.image(img_out, caption=" Detection Output", use_column_width=True)
 
             # Detection stats
             stats = {
@@ -83,7 +83,7 @@ if run and uploaded_files:
     # Show metrics table
     if show_metrics and results_data:
         df = pd.DataFrame(results_data)
-        st.markdown("### 📈 Detection Summary")
+        st.markdown("### 📈📈 Detection Summary")
         st.dataframe(df)
 
 else:
